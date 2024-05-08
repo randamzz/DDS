@@ -30,7 +30,8 @@ INSTALLED_APPS = [
      'rest_framework_simplejwt.token_blacklist' ,
      'hospitals' ,
      'citizens' ,
-     'associations'
+     'associations' ,
+     'Alertes' ,
 
 ]
 

@@ -9,4 +9,6 @@ urlpatterns = [
     path('token/', jwt_views.TokenObtainPairView.as_view(), name ="token_obtain_pair"), 
     #It generates a new access token and returns it to the client (mora ma ki tqada)
    # path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name="token_refresh"),
+    path('alerte/', include('Alertes.urls')),
+
 ]

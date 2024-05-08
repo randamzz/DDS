@@ -24,15 +24,10 @@ class UserManager(BaseUserManager):
         return self._create_user(email, password, user_type, **extra_fields)
 
 class User(AbstractBaseUser, PermissionsMixin):
-    USER_TYPE_CHOICES = (
-        ('citizen', 'Citizen'),
-        ('hospital', 'Hospital'),
-        ('association', 'Association'),
-    )
+
 
     email = models.EmailField(max_length=250, unique=True)
-    user_type = models.CharField(max_length=20, choices=USER_TYPE_CHOICES, default='citizen')  # Providing a default value    name = models.CharField(max_length=250)
-    is_staff = models.BooleanField(default=False)
+    user_type = models.CharField(max_length=20)  
     is_active = models.BooleanField(default=True)
 
     USERNAME_FIELD = 'email'
